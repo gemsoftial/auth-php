@@ -1,194 +1,327 @@
 # Login / Register Menggunakan PHP
+
+<br />
+<div lang="x-none" style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<span style="font-size: small;">Dalam
+sebuah website tentunya tidak asing lagi dengan Login ataupun Register, di
+sebuah website banyak sekali sistem yang mereka pakai untuk membuat hal
+tersebut, sistem Login sendiri mempunyai fungsi yang banyak, bisa di pakai
+untuk Pendataan, di pakai untuk langganan, ataupun di pakai untuk keamanan. </span></div>
+<span style="font-size: small;">
+
+</span><br />
+<div style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<br /></div>
+<span style="font-size: small;">
+
+</span><br />
+<div lang="x-none" style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<span style="font-size: small;">Login
+kalau dalam sistemnya hanya untuk memverifikasi apakah data yang di input sama
+dengan data yang ada di database, biasanya login hanya mengunakan 2 data saja
+yaitu berupa Email dan Password, jika data yang input tidak ada maka Users
+tidak bisa masuk pada website tersebut. Lalu bagaimana dengan Register apa
+gunanya?. Ya gunanya untuk mencantumkan / menambah data ke dalam database,
+tentunya tidak ada dalam database. Kenapa ? , Jawabannya pasti agar tidak ada
+data yang bertubrukan, dan juga tidak ada data duplikat, dengan begitu data
+yang tersimpan di database akan ringan.</span></div>
+<span style="font-size: small;">
+
+</span><br />
+<div style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<br /></div>
+<span style="font-size: small;">
+
+</span><br />
+<div lang="x-none" style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<span style="font-size: small;">Sepertinya
+sampai disana dulu penjelasanya, kita masuk pada Pemogramannya, Dalam Website
+Berbagai bahasa pemograman tapi kita akan mengunakan PHP sebagai Bahasanya, Dan
+Mysql Sebagai databasenya, seperti yang di atas kita akan membuat login dan
+register. </span></div>
+<span style="font-size: small;">
+
+</span><br />
+<div style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<span style="font-size: small;"><br /></span></div>
+<div style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<span style="font-size: small;">1. <span lang="x-none">Langkah pertama kita akan membuat sebuah database untuk nantinya
+dipakai untuk menyimpan</span><span lang="en-US"> data user</span></span></div>
+<div style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<span style="font-size: small;"><a href="https://4.bp.blogspot.com/-taeXSj_pkk0/XMvlQ9q_bnI/AAAAAAAABLU/BC-1HONTY4ksUPKStN9BtgYSqk1aqZpQgCLcBGAs/s1600/Untitled%2Bpicture.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="156" data-original-width="274" src="https://4.bp.blogspot.com/-taeXSj_pkk0/XMvlQ9q_bnI/AAAAAAAABLU/BC-1HONTY4ksUPKStN9BtgYSqk1aqZpQgCLcBGAs/s1600/Untitled%2Bpicture.png" /></a></span></div>
+<div style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<span style="font-size: small;"><span lang="en-US">2. </span><span style="font-family: &quot;calibri&quot;; font-style: normal; font-weight: normal;">Untuk Selanjutnya siapkan
+     folder projek kita.</span></span></div>
+<div style="font-family: &quot;Yu Gothic&quot;; margin: 0in;">
+<br /></div>
+<span style="font-size: small;"><span style="font-family: inherit;">Seperti
+biasa karena kita memakai Xampp, kita pergi Ke Localdisk C &gt;&gt; Xampp
+&gt;&gt; Htdocs &gt;&gt; buat tuh disana.</span>
+
+</span><br />
+<div style="font-family: Calibri; margin: 0in;">
+<br /></div>
+<span style="font-size: small;"></span><span style="font-size: small;"><span style="font-family: &quot;calibri&quot;; font-style: normal; font-weight: normal;">3. Untuk sekarang kita tidak
+     memakai style yang bagus cukup buat aja sendiri, kita fokus ke
+     strukturnya.&nbsp;</span></span><br />
+<br />
+<span style="font-size: small;"><span style="font-family: &quot;calibri&quot;; font-style: normal; font-weight: normal;">4. </span><span style="font-family: &quot;calibri&quot;;">Buat lah file index.php,
+     login.php, register.php, koneksi.php, style.css</span></span><br />
+<span style="font-size: small;"></span><span style="font-size: small;">Ada
+dua cara untuk membuat hal tersebut, anda bisa langsung buat di Foldernya.</span><br />
+<a href="https://1.bp.blogspot.com/-X5T1n3SHMMY/XMvmBomDE1I/AAAAAAAABLc/-ej7TpVhqgIWacVbb2MSAzRu9L_P_XtsgCLcBGAs/s1600/folder.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" data-original-height="513" data-original-width="914" height="358" src="https://1.bp.blogspot.com/-X5T1n3SHMMY/XMvmBomDE1I/AAAAAAAABLc/-ej7TpVhqgIWacVbb2MSAzRu9L_P_XtsgCLcBGAs/s640/folder.png" style="cursor: move;" width="640" /></a><span style="font-size: small;">Atau Anda Masuk Dalam Sofware Visual Studio Code.</span><br />
 <div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-e9CBKYV5WG4/XMATJ2cpiXI/AAAAAAAABIQ/6QAx6qtFC4A5ZrYhszZ59GtXR_T-KgjAwCLcBGAs/s1600/HTML%2B_%2BCSS%2B_%2BJAVASCRIPT%2B_%2BPHP.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="650" data-original-width="1350" height="308" src="https://4.bp.blogspot.com/-e9CBKYV5WG4/XMATJ2cpiXI/AAAAAAAABIQ/6QAx6qtFC4A5ZrYhszZ59GtXR_T-KgjAwCLcBGAs/s640/HTML%2B_%2BCSS%2B_%2BJAVASCRIPT%2B_%2BPHP.jpg" width="640" /></a></div>
+<a href="https://1.bp.blogspot.com/-E_AxzJc2PMo/XMvm0nhAfEI/AAAAAAAABLk/HK0JELs9dqwlvrAOlEIO_6og3Yd4WnyXQCLcBGAs/s1600/Untitled%2Bpictddure.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" data-original-height="537" data-original-width="637" height="538" src="https://1.bp.blogspot.com/-E_AxzJc2PMo/XMvm0nhAfEI/AAAAAAAABLk/HK0JELs9dqwlvrAOlEIO_6og3Yd4WnyXQCLcBGAs/s640/Untitled%2Bpictddure.png" width="640" /></a></div>
+<span style="font-size: small;">5. </span><span style="font-size: small;">Setelah
+filenya sudah dibuat, kita akan berurusan dulu dengan index.php dan styles.css</span><br />
 <br />
-<div lang="id" style="font-family: calibri; margin: 0in;">
-Counting
-atau disebut menghitung selalu digunakan untuk beberapa hal dari yang kecil
-hingga besar counting juga sering digunakan untuk Voting, Menentukan Terbesar
-Dan Terkecil. Dalam Blog /<span style="mso-spacerun: yes;">&nbsp; </span>Website
-Memiliki Counting ini mungkin berupa Widget atau API dari penyedianya.</div>
-<div lang="id" style="font-family: calibri; margin: 0in;">
-<br /></div>
-<div lang="id" style="font-family: calibri; margin: 0in;">
-Untuk
-Sekarang ini kita akan membuat Counting / Voting, Yang bisa kita buat dengan
-menggunakan PHP, Kita langsung saja ke TKP -- Tempat Kerja Proggramer.</div>
+<span style="font-size: small;">Index.php</span><br />
 <br />
-<br />
-1. Langkah Pertama Siapkan Database Yang Akan Di Gunakan.<br />
-<br />
-<br />
-<div style="direction: ltr;">
-<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-color: #A3A3A3; border-style: solid; border-width: 1pt; direction: ltr;" summary="" title="" valign="top">
- <tbody>
-<tr>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .6673in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-Nama</div>
-</td>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .6673in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-Tipe</div>
-</td>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .5in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-Index</div>
-</td>
- </tr>
-<tr>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .6673in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-Id</div>
-</td>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .6673in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-bigint</div>
-</td>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .6034in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-Primary</div>
-</td>
- </tr>
-<tr>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .6673in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-yes</div>
-</td>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .6673in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-int</div>
-</td>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .5in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-<br /></div>
-</td>
- </tr>
-<tr>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .6673in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-no</div>
-</td>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .6673in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-int</div>
-</td>
-  <td style="border-color: #A3A3A3; border-style: solid; border-width: 1pt; padding: 4pt 4pt 4pt 4pt; vertical-align: top; width: .5in;"><div lang="id" style="font-family: Calibri; font-size: 11.0pt; margin: 0in;">
-<br /></div>
-</td>
- </tr>
-</tbody></table>
-<br /></div>
-<div style="direction: ltr;">
-2. Siapkan folder untuk menyimpan project anda, bila anda memakai XAMPP, anda harus pergi ke Localdisk C &gt;&gt; xampp &gt;&gt; htdocs</div>
-<div style="direction: ltr;">
-<br /></div>
-<div style="direction: ltr;">
-3. Agar tampilannya lebih bagus dan menarik kita pakai Material Design Lite untuk Stylenya. Klik link ini untuk mendownload <a href="http://4to.xyz/NVe" rel="nofollow" target="_blank">MDL&nbsp;</a></div>
-<div style="direction: ltr;">
-<br /></div>
-<div style="direction: ltr;">
-4. Buatlah Folder Css, Js untuk menampung file dari MDL seperti dibawah ini :</div>
-<div style="direction: ltr;">
-<br /></div>
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://4.bp.blogspot.com/-M7C1Dh1YEg8/XMAM0Xu7-nI/AAAAAAAABHc/qL_WV1_4Kooj2q_HUnbR_xHzthnlbmoOQCLcBGAs/s1600/Gambar%2Btidak%2Bberjudul.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="98" data-original-width="625" height="100" src="https://4.bp.blogspot.com/-M7C1Dh1YEg8/XMAM0Xu7-nI/AAAAAAAABHc/qL_WV1_4Kooj2q_HUnbR_xHzthnlbmoOQCLcBGAs/s640/Gambar%2Btidak%2Bberjudul.png" width="640" /></a></div>
-<div class="separator" style="clear: both; text-align: center;">
+<div style="font-family: Calibri; font-size: 11pt; margin: 0in 0in 0in 0.375in; text-align: left;">
 </div>
-<div style="direction: ltr;">
-<br /></div>
-<div style="direction: ltr;">
-5.Buatlah Folder Database untuk menyimpang file koneksi ke mysql<br />
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://1.bp.blogspot.com/-88tlf3YSD9M/XMAUbojOdkI/AAAAAAAABIc/IFPtw6iy4W8TMc25Iej9YRjbZ20eC7nugCLcBGAs/s1600/Gambar%2Btidak%2Bberjsaudul.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="94" data-original-width="630" height="94" src="https://1.bp.blogspot.com/-88tlf3YSD9M/XMAUbojOdkI/AAAAAAAABIc/IFPtw6iy4W8TMc25Iej9YRjbZ20eC7nugCLcBGAs/s640/Gambar%2Btidak%2Bberjsaudul.png" width="640" /></a></div>
+<pre class="code code-php"><label>PHP </label><code>	&lt;?php 
+	//Menghilangkan Error
+	error_reporting(0);
+	//Memulai Session Untuk Penggunaan Data Login
+	session_start();
+	?&gt;
+	&lt;!DOCTYPE html&gt;
+	&lt;html lang="en"&gt;
+	&lt;head&gt;
+	    &lt;meta charset="UTF-8"&gt;
+	    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+	    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+	    &lt;link rel="stylesheet" href="styles.css"&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	    &lt;div class="menu"&gt;
+	        &lt;ul&gt;
+	            &lt;li&gt;&lt;a href="?page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+	            &lt;?php
+	            //Manampilkan Nama Data Login
+	            if($_SESSION['nama']){
+	                echo "&lt;li&gt;&lt;a&gt;".$_SESSION['nama']."&lt;/a&gt;&lt;/li&gt;";
+	            }else{
+	            ?&gt;
+	            &lt;li&gt;&lt;a href="?page=login"&gt;Login&lt;/a&gt;&lt;/li&gt;
+	            &lt;li&gt;&lt;a href="?page=register"&gt;Register&lt;/a&gt;&lt;/li&gt;
+	            &lt;?php }?&gt;
+	        &lt;/ul&gt;
+	    &lt;/div&gt;
+	    &lt;div class="main"&gt;
+	        &lt;!-- Konten --&gt;
+	        &lt;?php 
+	            //Koneksi Ke Database
+	            include_once("koneksi.php");
+	            $page = $_GET['page'];
+	            if($page == "logout"){
+	                //Menghapus Data Login
+	                session_destroy();
+	                echo '&lt;script type="text/javascript"&gt;
+	                window.location ="index.php"&lt;/script&gt;';
+	            }else if($page){
+	                include($page.'.php');
+	                echo "&lt;title&gt;$title&lt;/title&gt;";
+	            }else if($_SESSION['nama']){
+	                echo "&lt;title&gt;Source Code Login / Register&lt;/title&gt;";
+	                echo "&lt;h3&gt;".$_SESSION['nama']."&lt;/h3&gt; &lt;a href='?page=logout'&gt; LOG OUT&lt;/a&gt;&lt;br/&gt;";
+	                if($_SESSION['level']==1){
+	                    echo "LEVEL : Administrator";
+	                }else if($_SESSION['level']==2){
+	                    echo "LEVEL : Users";
+	                }
+	            }else{
+	                echo "&lt;title&gt;Source Code Login / Register&lt;/title&gt;";
+	                echo "&lt;h4&gt;Terima Kasih Sudah Mencoba Open Source Auth Ini,&lt;br/&gt; Untuk Pengembangan Saya Berikan Pada Kalian.&lt;/h4&gt;&lt;br/&gt;";
+	                echo "&lt;br/&gt;&lt;h4&gt; Source Code Ini Berupa Fungsi Register - Login - Logout,&lt;br/&gt; untuk tampilan mohon maaf kurang bagus&lt;/h4&gt;";
+	            }
+	        ?&gt;
+	    &lt;/div&gt;
+	    &lt;div class="footer"&gt;
+	        &lt;h5&gt; Copyright &amp;copy 2019 &lt;a href="http://bisa-koding.blogspot.com"&gt;Bisa Koding&lt;/a&gt;&lt;/h5&gt;
+	    &lt;/div&gt;
+	&lt;/body&gt;
+	&lt;/html&gt;
+</code></pre>
 <br />
-6. Di dalam folder Database anda buat file connect.php<br />
+Styles.css<br />
+<br />
+<pre class="code code-css"><label>CSS </label><code>
+body{
+    margin: 0;
+    padding: 0;
+}
+.menu{
+    text-align: center;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+.menu ul li {
+    float: left;
+  }
+  
+.menu ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+.menu ul li a:hover {
+    background-color: #111;
+  }
+.main{
+    height: 400px;
+    justify-items: center;
+    align-items: center;
+    padding:10.1% 0 0px 35%;
+}
+.footer{
+    background-color: #333;
+    text-align: center;
+    padding: 5px 5px;
+    color: white;
+    font-size: 1.4 em;
+}
+.footer a{
+  color: white;
+  text-decoration: none;
+}
+.btn{
+  text-align: end;
+}
+.login-form{
+  text-align: end;
+  padding-left:5%;
+}
+.register-form{
+  text-align: end;
+}
+</code></pre>
+<br />
+6. Setelah&nbsp; keduanya Selesai kita pindah pada fungsinya, kita buat koneksi databasenya ke mysql, buat file koneksi.php<br />
+<br />
 <br />
 <pre class="code code-php"><label>PHP </label><code>&lt;?php
-    error_reporting(0);
-    //Data Koneksi Ke Database
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $database = "count";
-    //Koneksi Database
-    $conn = mysqli_connect($host, $user, $pass);
-    mysqli_select_db($conn, $database)or die(mysqli_error());
+$host = "localhost";
+$user = "root";
+$pass = "";
+$database = "auth";
+
+$conn = mysqli_connect($host, $user, $pass)or die(mysqli_error());
+mysqli_select_db($conn, $database)or die(mysqli_error());
 ?&gt;</code></pre>
 <br />
-5. Buatlah File Index.php untuk memulai tujuan kita untuk membuat vote.</div>
-<div style="direction: ltr;">
-<br /></div>
-<div style="direction: ltr;">
-<br /></div>
+7. Sesudah itu buat file Login.php<br />
+<pre class="code code-php"><label></label><code>&lt;h5&gt;Silakan Login Dengan Data Yang Telah Di Daftarkan&lt;/h5&gt;
+&lt;form method="post" class="login-form"&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;th&gt;Email&lt;/th&gt;
+            &lt;td&gt;&lt;input type="email" name="email"&gt;&lt;/td&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;th&gt;Password&lt;/th&gt;
+            &lt;td&gt;&lt;input type="password" name="pass"&gt;&lt;/td&gt;
+        &lt;/tbody&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;td class="btn"&gt;&lt;button name="login"&gt; LOGIN&lt;/button&gt;&lt;/td&gt;
+    &lt;/table&gt;
+&lt;/form&gt;
+&lt;?php
+$title = "Login - Source Code";
+if(isset($_POST['login'])){
+    //Inialisasi Kolom
+    $email = $_POST['email'];
+    $pass = md5($_POST['pass']);
+    if($email &amp;&amp; $pass){
+        //Menyamakan Data Input Dengan Database - Inilah Fungsi Login
+        $data_login = mysqli_query($conn, "SELECT * FROM users WHERE email='$email' AND pass='$pass'") or die(mysql_error());
+        $result = mysqli_fetch_assoc($data_login);
+        $v_email = $result['email'];
+        $v_pass = $result['pass'];
+        //Verifikasi Email &amp; Password
+        if($email == $v_email){
+            if($pass == $v_pass){
+                $_SESSION['nama'] = $result['nama'];
+                $_SESSION['level'] = $result['level'];
+                echo '&lt;script type="text/javascript"&gt;
+                window.location ="index.php"&lt;/script&gt;';
+            }else{
+                echo "Password Salah";
+            }
+        }else{
+            echo "Email Tidak Ditemukan";
+        }
+    }
+}
+?&gt;</code></pre>
 <br />
-<pre class="code code-html"><label>HTML</label><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
-    &lt;title&gt;Counting Source Code&lt;/title&gt;
-    &lt;link rel="stylesheet" href="Css/material.css"/&gt;
-    &lt;link rel="stylesheet" href="Css/styles.css"/&gt;
-    &lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"&gt;
-    &lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class="mdl-grid"&gt;
-        &lt;div class="mdl-cell mdl-cell--4-col"&gt;&lt;/div&gt;
-        &lt;div class="mdl-cell mdl-cell--4-col center"&gt;
-            &lt;h5 class="text-center"&gt;
-                Halo, Terima Kasih Sudah Datang, Silakan Klik Tombol Manapun Yang Kalian Sukai.
-            &lt;/h5&gt;
-            &lt;?php
-            include_once("Database/connect.php");
-            //Pengambilan Data Dari Database
-            $sql = "SELECT * FROM count";
-            $panggil_data = mysqli_query($conn, $sql);
-            $data_count = mysqli_fetch_assoc($panggil_data);
-            ?&gt;
-            &lt;div class="mdl-grid"&gt;
-                &lt;div class="mdl-cell mdl-cell--1-col"&gt;&lt;/div&gt;
-                &lt;div class="mdl-cell mdl-cell--10-col"&gt;
-                    &lt;span class="mdl-chip mdl-chip--contact"&gt;
-                        &lt;span class="mdl-chip__contact mdl-color--green mdl-color-text--white"&gt;Y&lt;/span&gt;
-                        &lt;span class="mdl-chip__text"&gt;&lt;?php echo $data_count['yes'];?&gt;&lt;/span&gt;
-                    &lt;/span&gt;
-                    &lt;span class="mdl-chip mdl-chip--contact float-right"&gt;
-                        &lt;span class="mdl-chip__contact mdl-color--red mdl-color-text--white"&gt;N&lt;/span&gt;
-                        &lt;span class="mdl-chip__text"&gt;&lt;?php echo $data_count['no'];?&gt;&lt;/span&gt;
-                    &lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div class="mdl-cell mdl-cell--1-col"&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class="mdl-grid"&gt;
-                &lt;div class="mdl-cell mdl-cell--4-col"&gt;&lt;/div&gt;
-                &lt;div class="mdl-cell mdl-cell--7-col"&gt;
-                    &lt;form method="get"&gt;
-                        &lt;button name="yes" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"&gt;
-                            &lt;i class="material-icons"&gt;done&lt;/i&gt; YES&lt;/button&gt;
-                        &lt;button name="no"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"&gt;       
-                            &lt;i class="material-icons"&gt;report&lt;/i&gt; NO&lt;/button&gt;
-                    &lt;/form&gt;
-                &lt;/div&gt;
-                &lt;div class="mdl-cell mdl-cell--1-col"&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;?php
-                if(isset($_GET['yes'])){
-                    //Pemanggilan Data
-                    $yes = $data_count['yes'] +1;
-                    $update_data = mysqli_query($conn, "UPDATE count SET yes='$yes'");
-                    echo '&lt;script type="text/javascript"&gt;
-                                window.location = "index.php"
-                            &lt;/script&gt;';
-                }else if(isset($_GET['no'])){
-                    //Pemanggilan Data
-                    $no = $data_count['no'] +1;
-                    $update_data = mysqli_query($conn, "UPDATE count SET no='$no'");
-                    echo '&lt;script type="text/javascript"&gt;
-                                window.location = "index.php"
-                            &lt;/script&gt;';
-                }
-            ?&gt;
-        &lt;/div&gt;
-        &lt;div class="mdl-cell mdl-cell--4-col"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;script src="Js/material.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+8.Buatlah File register.php<br />
+<pre class="code code-php"><label></label><code>&lt;h5&gt;Silakan Register Dengan Data Yang Akan Di Daftarkan&lt;/h5&gt;
+&lt;form method="post" class="register-form"&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;th&gt;Nama&lt;/th&gt;
+            &lt;td&gt;&lt;input type="text" name="nama"&gt;&lt;/td&gt;
+            &lt;th&gt;Email&lt;/th&gt;
+            &lt;td&gt;&lt;input type="email" name="email"&gt;&lt;/td&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;th&gt;Password&lt;/th&gt;
+            &lt;td&gt;&lt;input type="password" name="pass"&gt;&lt;/td&gt;
+            &lt;th&gt;Level&lt;/th&gt;
+            &lt;td&gt;&lt;select name="level"&gt;
+                &lt;option value="1"&gt;Admin&lt;/option&gt;
+                &lt;option value="2"&gt;Users&lt;/option&gt;
+            &lt;/select&gt;&lt;/td&gt;
+        &lt;/tbody&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;td class="btn"&gt;&lt;button name="register"&gt;REGISTER&lt;/button&gt;&lt;/td&gt;
+    &lt;/table&gt;
+&lt;/form&gt;
+&lt;?php
+$title = "Register - Source Code";
+if(isset($_POST['register'])){
+    //Inisialisasi Kolom
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    //MD5 Berfungsi Merandom Password
+    $pass = md5($_POST['pass']);
+    $level = $_POST['level'];
+    if($nama &amp;&amp; $email &amp;&amp; $pass &amp;&amp; $level){
+        //Verifikasi Data Yang Sama
+        $dt_register = mysqli_query($conn, "SELECT * FROM users")or die(mysqli_error());
+        $r_reg = mysqli_fetch_assoc($dt_register);
+        $r_email = $r_reg['email'];
+        if($email == $r_email){
+            echo"Data Sudah Digunakan";
+        }else{
+            //Menyimpan Data Ke Query / Database
+            $simpan = mysqli_query($conn, "INSERT INTO users (id,email,pass,nama,level) VALUES (NULL,'$email','$pass','$nama','$level')");
+            if($simpan){
+            echo "&lt;script&gt;window.alert('Data Berhasil Di Tambah')&lt;/script&gt;";
+            echo '&lt;script type="text/javascript"&gt;
+            window.location ="index.php"&lt;/script&gt;';
+            }else{
+            echo"Data Tidak Berhasil Di Tambah";
+            }
+        }      
+    }else{
+        echo"Masih Ada Kolom Yang Belum Di Isi.";
+    }
+}
+?&gt;</code></pre>
+<br />
+9. Setelah itu selesai tinggal anda run dalam xampp.<br />
 <br />
 <br />
-6. Setelah itu anda bisa lansung mencobanya.
-<br />
-<div class="separator" style="clear: both; text-align: center;">
-<a href="https://2.bp.blogspot.com/-nJwVkeH5yM4/XMAP8IV-qbI/AAAAAAAABH4/PSlYEF2sBZY8EYeCwbeAfzAmjRbu5ybmwCLcBGAs/s1600/SC1.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" data-original-height="260" data-original-width="480" height="172" src="https://2.bp.blogspot.com/-nJwVkeH5yM4/XMAP8IV-qbI/AAAAAAAABH4/PSlYEF2sBZY8EYeCwbeAfzAmjRbu5ybmwCLcBGAs/s320/SC1.png" width="320" /></a></div>
+Demikian Source code Login / Register dengan PHP semoga source code ini membantu anda.<br />

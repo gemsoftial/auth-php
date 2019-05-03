@@ -30,7 +30,10 @@ body{
     background-color: #111;
   }
 .main{
-    text-align: center;
+    height: 400px;
+    justify-items: center;
+    align-items: center;
+    padding:10.1% 0 0px 35%;
 }
 .footer{
     background-color: #333;
@@ -38,4 +41,18 @@ body{
     padding: 5px 5px;
     color: white;
     font-size: 1.4 em;
+}
+.footer a{
+  color: white;
+  text-decoration: none;
+}
+.btn{
+  text-align: end;
+}
+.login-form{
+  text-align: end;
+  padding-left:5%;
+}
+.register-form{
+  text-align: end;
 }
